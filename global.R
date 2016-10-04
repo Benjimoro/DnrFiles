@@ -3,6 +3,8 @@
 #Author: Ben B. Warner
 #Last mod: 8/2/2016
 
+#server: dnrproject.cloudapp.net username: azureuser pwd: Dnr2016
+
 library(shiny)
 library(RODBC)
 library(varhandle)
@@ -31,6 +33,7 @@ edisGageDat <- sqlQuery(dbhandle, 'select * from [dnr-edisto].[dbo].[edistoDataG
 edisEUIFDat <- sqlQuery(dbhandle, 'select * from [dnr-edisto].[dbo].[edistoDataEUIF] ORDER BY date')
 
 edisDesc <- unfactor(sqlQuery(dbhandle, 'select * from [dnr-edisto].[dbo].[dnr-GageTable-desc]'))
+edisDesc<- edisDesc[edisDesc$Prj_ID!="",]
 
 for(i in 1:length(edisDesc$Active)){
   if(edisDesc[i,5]=="Inactive"){

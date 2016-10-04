@@ -8,7 +8,7 @@ library(leaflet)
 library(dygraphs)
 
 shinyUI(
-  fluidPage(title= "DNR Basin Flow Allowances",
+  fluidPage(title= "Minimum In-stream Flow Tool",
           sidebarPanel(width = 6,
             tabsetPanel(
               tabPanel("Main Menu",
@@ -17,8 +17,8 @@ shinyUI(
                                                    datList,
                                                    selected = datList[1])),
                                 column(6,
-                                       selectInput("sitePick",label = strong("Select Site:"),
-                                                   edisDesc$Prj_ID,selected = edisDesc$Prj_ID[1]))),
+                                       selectInput("sitePick",label = strong("Select Site Name:"),
+                                                   edisDesc$Site_Name,selected = edisDesc$Site_Name[1]))),
                        fluidRow(column(6,
                                        strong(textOutput("text1")))),
                        br(),
@@ -29,6 +29,9 @@ shinyUI(
             mainPanel(width = 6,leafletOutput("map",height='520px')),
           mainPanel(width=12,
             tabsetPanel(
+              tabPanel("Tool Explanation",
+                       verbatimTextOutput("paraExplain")
+                ),
               tabPanel("Site Descriptions",dataTableOutput("descTable")
                 ),
               tabPanel("Time Series",dataTableOutput("edisTable")
