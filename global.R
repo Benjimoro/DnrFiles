@@ -15,8 +15,8 @@ library(zoo)
 # dbhandle2 <- odbcConnect("MSSQL2","usgssql","Usgs2016")
 dbhandle <- odbcDriverConnect('driver={SQL Server};
                               server=crjtx9reyb.database.windows.net;
-                              uid=usgssql;
-                              pwd=Usgs2016;
+                              uid=******;
+                              pwd=******;
                               database=dnr-edisto;
                               ')                      
 dbhandle2 <- odbcDriverConnect('driver={SQL Server};
