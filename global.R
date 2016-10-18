@@ -21,8 +21,8 @@ dbhandle <- odbcDriverConnect('driver={SQL Server};
                               ')                      
 dbhandle2 <- odbcDriverConnect('driver={SQL Server};
                               server=crjtx9reyb.database.windows.net;
-                              uid=usgssql;
-                              pwd=Usgs2016;
+                              uid=*******;
+                              pwd=*******;
                               database=usgssql;
                               ')                      
 
