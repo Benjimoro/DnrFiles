@@ -3,7 +3,7 @@
 #Author: Ben B. Warner
 #Last mod: 8/2/2016
 
-#server: dnrproject.cloudapp.net username: azureuser pwd: Dnr2016
+#server: dnrproject.cloudapp.net username: ******* pwd: *******
 
 library(shiny)
 library(RODBC)
